@@ -6,9 +6,10 @@ class UserController{
     public function __construct(){
         $this->userModel = new UserModel();
     }
-    public function addUser($id, $email,$username, $password){
+    public function addUser($id,$name, $email,$username, $password){
         //perform data validation
         $this->userModel->id = $id;
+        $this->userModel->name = $name;
         $this->userModel->email = $email;
         $this->userModel->username = $username;
         $this->userModel->password = $password;
@@ -27,6 +28,7 @@ $userCont = new UserController();
 $return = $userCont->getAllUser();
 while($data = mysqli_fetch_assoc($return)){
     echo "id: ".$data["id"]."<br/>";
+    echo "name".$data["name"]."<br/>";
     echo "email: ".$data["email"]."<br/>";
     echo "username: ".$data["username"]."<br/>";
     echo "password: ".$data["password"]."<br/>";

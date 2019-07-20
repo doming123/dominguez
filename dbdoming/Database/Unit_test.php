@@ -1,31 +1,11 @@
 <?php
 require("../database/Database.php");
-// require("../model/UserModel.php");
 
-// $Data = new UserModel();
-
-// $insertData->id = "john";
-// $insertData->email = "john@gmail.com";
-// $insertData->username = "123";
-// $insertData->password ="123123123";
-// echo"Case#1: Inserting data using valid SQL insert command  RESULT :".$Data->insert()."</br>";
-
-
-//  $insertData->password = "1";
-
-//  $insertData->id = "28";
-//  echo "Case#2 Updating data using valid SQL update command RESULT :".$insertData->update()."</br>";
-
-
-//  echo "Case#3 Extracting data using valid SQL select command RESULT".$insertData->readAll()."</br>";
-
-//  $insertData->id = "28";
-//  echo"Case#4 Deleting data using valid SQL delete command RESULT ".$insertData->delete();
 
  $dbObj = new Database();
 
-  $result = $dbObj->execute("INSERT into tbluser(id, email,username,password)
-   values('john', 'a@g.com', '123sda', '123123123')");
+  $result = $dbObj->execute("INSERT into tbluser(name,email,username,password)
+   values('john','a@g.com','123sda','123123123')");
    echo"Case#1: Inserting data using valid SQL insert command  RESULT :".$result."</br>";
 
  $result = $dbObj->execute("UPDATE tbluser set  username ='john' where id = 1" );

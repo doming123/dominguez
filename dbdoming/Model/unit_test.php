@@ -5,6 +5,7 @@ require("../model/UserModel.php");
 $Data = new UserModel();
 
 $Data->id = "dominguez";
+$Data->name = "john";
 $Data->email = "dominuez@gmail.com";
 $Data->username = "123";
 $Data->password ="123123123";
@@ -25,9 +26,6 @@ $Data->id = "28";
 echo"Case#4 Delete record RESULT ";
 var_dump($Data->delete());
 
-echo"Case#5: Inserting record with 3 missing fields  RESULT :";
-var_dump($Data->insertC5());
-
 
 $Data->password = "1";
 $Data->id = "qwerty";
@@ -35,7 +33,7 @@ echo"updating record with a non-existing ID RESULT: ";
 var_dump($Data->update());
 
 $Data->id = "qwerty";
-echo"Case#4 Deleting record with a non-existing ID ";
+echo" Deleting record with a non-existing ID ";
 var_dump($Data->delete());
 
 ?>

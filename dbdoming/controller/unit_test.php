@@ -3,8 +3,9 @@ require("../model/UserModel.php");
 
 $Data= new UserModel();
 
-$Data->name = "dominguez";
-$Data->email = "dominguez@gmail.com";
+$Data->id = "dominguez";
+$Data->name = "john";
+$Data->email = "dominuez@gmail.com";
 $Data->username = "123";
 $Data->password ="123123123";
 echo"Case#1: Inserting record  RESULT :";

@@ -11,16 +11,16 @@ class Database{
     }
 
     public function execute($sql){
-            //for activity 2
-            //  return mysqli_queary($this->con, sql);
+    
+             return mysqli_query($this->con, $sql);
          
             
          //for activity 1   
-         if(mysqli_query($this->con, $sql)){
-             return 1;
-         }else{
-             return 0;
-         }
+        //  if(mysqli_query($this->con, $sql)){
+        //      return 1;
+        //  }else{
+        //      return 0;
+        //  }
     }
 
     public function __destruct(){

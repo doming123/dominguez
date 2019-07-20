@@ -2,6 +2,7 @@
 require("../database/Database.php");
 class UserModel{
     public $id;
+    public $name;
     public $email;
     public $username;
     public $password;
@@ -13,7 +14,7 @@ class UserModel{
     }
 
     public function insertC5(){
-        $sql = "INSERT INTO $this->tablename (id, email,username,password) VALUES('$this->name')"; //case #5
+        $sql = "INSERT INTO $this->tablename (id,name,email,username,password) VALUES('$this->name')"; //case #5
         if($this->db->execute($sql)){
             return true;
         }
@@ -22,7 +23,7 @@ class UserModel{
         }
     }
     public function insert(){
-        $sql = "INSERT INTO $this->tablename (id, email,username,password) VALUES('$this->id','$this->email','$this->username', '$this->password')";
+        $sql = "INSERT INTO $this->tablename (id,name,email,username,password) VALUES('$this->id','$this->id','$this->email','$this->username', '$this->password')";
         if($this->db->execute($sql)){
             return true;
         }
@@ -43,12 +44,8 @@ class UserModel{
 
     public function readAll(){
         $sql = "SELECT * FROM $this->tablename";
-        if($this->db->execute($sql)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return $this->db->execute($sql);
+       
     }
 
     public function delete(){
